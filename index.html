@@ -80,10 +80,20 @@
 
     <section class="slide">
         <h2>Game loop</h2>
-        <p></p>
+        <p>TODO TODO</p>
     </section>
 
-    <!-- TODO про game loop и прочие особенности игры -->
+    <section class="slide">
+        <h2>requestAnimationFrame</h2>
+        <pre>
+            <code>function gameLoop (<mark class="mark">timestamp</mark>) {</code>
+            <code class="comment">  /* recalculate */</code>
+            <code class="comment">  /* redraw */</code>
+            <code>  <mark class="important">requestAnimationFrame</mark>(gameLoop);</code>
+            <code>}</code>
+            <code>gameLoop(0);</code>
+        </pre>
+    </section>
 
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
@@ -99,20 +109,80 @@
         </ul>
     </section>
 
-    <!-- TODO пример трансформации сетки? -->
+    <section class="slide">
+        <h2>Использование CSS трасформации</h2>
+        <pre>
+            <code>transform: <mark class="mark">scaleY</mark>(0.5);</code>
+            <code>transform: <mark class="mark">rotate</mark>(45deg);</code>
+        </pre>
+        <div class=table-holder>
+            <div class=table>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .table-holder {
+                transform: translate(-50%, -50%) scaleY(0.5);
+                position: absolute;
+                left: 50%;
+                top: calc(50% + 120px);
+            }
 
-    <!-- TODO растризация вектора -->
+            .table {
+                display: table;
+                border-spacing: 5px;
+                transform: rotate(45deg);
+            }
 
-    <!-- TODO тут еще много чего будет -->
+            .table .row {
+                display: table-row;
+            }
+
+            .table .cell {
+                display: table-cell;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+            }
+        </style>
+    </section>
+
 
     <section class="slide slide_center_content">
         <h2>Спрайтовая анимация на CSS</h2>
+        <pre>
+            <code>animation: <mark class="mark">play</mark> 0.5s <mark class="important">steps(6)</mark> infinite;</code>
+            <code class="comment">/* Изменение свойства background-position в анимации */</code>
+        </pre>
         <div class="person"></div>
         <div class="person person_animation"></div>
         <style>
             .person {
                 align-self: center;
-                margin-top: 80px;
+                margin-top: 50px;
                 width: 408px;
                 height: 104px;
                 background-image: url('./pictures/person.png');
@@ -135,15 +205,9 @@
         </style>
     </section>
 
-    <section class="slide">
-        <h2>Спрайтовая анимация на CSS</h2>
-        <pre>
-            <code>.person {</code>
-            <code>    animation: <mark class="mark">play</mark> 0.5s <mark class="important">steps(6)</mark> infinite;</code>
-            <code>}</code>
-            <code class="comment">/* Изменение свойства background-position в анимации */</code>
-        </pre>
-    </section>
+    <!-- TODO тут еще много чего будет -->
+
+    <!-- TODO SVG: растризация вектора -->
 
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
