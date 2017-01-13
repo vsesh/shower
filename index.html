@@ -88,18 +88,45 @@
 <section class="slide">
     <h2>requestAnimationFrame</h2>
     <pre>
-            <code>function gameLoop (<mark class="mark">timestamp</mark>) {</code>
+            <code>function tick (<mark class="mark">timestamp</mark>) {</code>
             <code class="comment">  /* recalculate */</code>
             <code class="comment">  /* redraw */</code>
-            <code>  <mark class="important">requestAnimationFrame</mark>(gameLoop);</code>
+            <code>  <mark class="important">requestAnimationFrame</mark>(tick);</code>
             <code>}</code>
-            <code>gameLoop(0);</code>
+            <code>requestAnimationFrame(tick);</code>
+        </pre>
+</section>
+
+<section class="slide slide_center">
+    <a href="./examples/example_tick.html" target="_blank" class="example">example</a>
+    <style>
+        .example {
+            font-size: 80px;
+            line-height: 110px;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2>tick</h2>
+    <pre>
+            <code>function tick (timestamp) {</code>
+            <code class="comment">  // ...</code>
+            <code>  circle.update(<mark class="mark">timestamp - lastTimeValue) / 1000</mark>);</code>
+            <code class="comment">  // ...</code>
+            <code>}</code>
+            <code>requestAnimationFrame(tick);</code>
         </pre>
 </section>
 
 <section class="slide">
-    <h2>Простой пример с тиком</h2>
-    <p>TODO</p>
+    <h2>Circle.update</h2>
+    <pre>
+        <code class="comment">// ...</code>
+        <code>this._position[0] += (<mark class="mark">timeDelta</mark> * this._speed) * </code>
+        <code>   this._direction[0];</code>
+        <code class="comment">// ...</code>
+    </pre>
 </section>
 
 <!-- Раздел -->
