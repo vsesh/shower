@@ -613,15 +613,48 @@
 <section class="slide">
     <h2>Элемент audio</h2>
     <pre>
-        <code>var myaudio = new <mark class="mark">Audio</mark>('sound_asset.mp3');</code>
-        <code class="comment">&#60;audio preload="auto" src="sound_asset.mp3"&#62;&#60;/audio&#62;</code>
+        <code>var myaudio = new <mark class="mark">Audio</mark>("sound_asset.mp3");</code>
+        <code class="comment">// &#60;audio preload="auto" src="sound_asset.mp3"&#62;&#60;/audio&#62;</code>
+        <code>myaudio.play();</code>
     </pre>
 </section>
 
 <section class="slide">
-    <h2>Задачи звуков в играх</h2>
+    <h2>TODO Синхронизация звука</h2>
+    <img src="./pictures/sounds2.png" class="game_example" />
+    <style>
+        .game_example {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2>Синхронизация звука</h2>
+    <pre>
+        <code class="comment">// Текущее положение в аудиофайле</code>
+        <code>myaudio.<mark class="mark">currentTime</mark></code>
+        <code class="comment">// Громкость</code>
+        <code>myaudio.<mark class="mark">volume</mark></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>TODO Объемный звук</h2>
+    <img src="./pictures/sounds.png" class="game_example" />
+    <style>
+        .game_example {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2>Web Audio API</h2>
     <ul>
-        <li>Управление звуковыми дорожками</li>
+        <li>Программный интерфейс для обработки звука</li>
         <li>Объемное звучание</li>
         <li>Звуковые эффекты</li>
         <li>Синхронизация звука</li>
@@ -629,13 +662,7 @@
 </section>
 
 <section class="slide">
-    <h2>Задачи звуков в играх</h2>
-    <p>TODO изображения задач звука</p>
-</section>
-
-<section class="slide">
-    <h2>Web Audio API</h2>
-    <p>TODO описание, изображение</p>
+    <h2>TODO panning example</h2>
 </section>
 
 <!-- Раздел -->
@@ -650,12 +677,30 @@
     <h2>Сетевая игра</h2>
 </section>
 
-<!-- TODO -->
+<section class="slide">
+    <h2>TODO Про обычную синхоронизацию данных</h2>
+</section>
+
+<section class="slide">
+    <h2>TODO Про проблемы синхронизации времени</h2>
+</section>
+
+<section class="slide">
+    <h2>TODO Про постоянное соединение через WebSocket</h2>
+</section>
 
 <!-- Раздел -->
 
 <section class="slide subtitle slide_center">
     <h2>Итог</h2>
+</section>
+
+<section class="slide">
+    <h2>TODO Сам итог</h2>
+</section>
+
+<section class="slide">
+    <h2>TODO Про некоторые другие спецификации. К примеру, Payment Request API</h2>
 </section>
 
 <section class="slide subtitle slide_center">
@@ -676,11 +721,10 @@
         </p>
     </div>
     <style>
-        .credits {
-        }
 
         .credits > div:first-child {
             border-bottom: 1px solid black;
+            margin-bottom: 0px;
         }
 
         .credits > div {
