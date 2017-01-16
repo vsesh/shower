@@ -21,14 +21,14 @@
             text-align: center;
             font-size: 70px;
         }
-
+        
         .arrow_right {
             width: 40px;
             height: 30px;
             background-color: black;
             position: relative;
         }
-
+        
         .arrow_right::after {
             width: 30px;
             height: 30px;
@@ -43,9 +43,8 @@
             border-bottom: 30px solid transparent;
             border-left: 40px solid black;
         }
-
     </style>
-<script src="node_modules/shower-core/shower.min.js"></script>
+    <script src="node_modules/shower-core/shower.min.js"></script>
 </head>
 
 <body class="shower list">
@@ -63,53 +62,53 @@
                 font-size: 100px;
             }
         </style>
-</section>
+    </section>
 
-<section class="slide">
-    <h2>Кто я такой?</h2>
-    <p>Меня зовут Сева</p>
-    <p class="next">Ведущий разработчик Конструктора карт Яндекса</p>
-    <p class="next">В прошлом flash-разработчик игр для социальных сетей</p>
-</section>
+    <section class="slide">
+        <h2>Кто я такой?</h2>
+        <p>Меня зовут Сева</p>
+        <p class="next">Ведущий разработчик Конструктора карт Яндекса</p>
+        <p class="next">В прошлом flash-разработчик игр для социальных сетей</p>
+    </section>
 
-<section class="slide">
-    <h2>Почему такая тема?</h2>
-    <p>Внешние браузерные плагины вымирают</p>
-    <p class="next">Web-спецификации наоборот предоставляют всё больше возможностей</p>
-    <p class="next">Появляется всё больше готовых решений</p>
-</section>
+    <section class="slide">
+        <h2>Почему такая тема?</h2>
+        <p>Внешние браузерные плагины вымирают</p>
+        <p class="next">Web-спецификации наоборот предоставляют всё больше возможностей</p>
+        <p class="next">Появляется всё больше готовых решений</p>
+    </section>
 
-<section class="slide">
-    <h2>Есть много готовых решений для HTML5-игр</h2>
-    <ul>
-        <li>Construct 2</li>
-        <li>Unity</li>
-        <li>Game Marker</li>
-        <li>Pixi.js</li>
-        <li>D3</li>
-        <li>...</li>
-    </ul>
-</section>
+    <section class="slide">
+        <h2>Есть много готовых решений для HTML5-игр</h2>
+        <ul>
+            <li>Construct 2</li>
+            <li>Unity</li>
+            <li>Game Marker</li>
+            <li>Pixi.js</li>
+            <li>D3</li>
+            <li>...</li>
+        </ul>
+    </section>
 
-<!-- Раздел -->
-<section class="slide subtitle slide_center">
-    <h2>Немного теории</h2>
-</section>
+    <!-- Раздел -->
+    <section class="slide subtitle slide_center">
+        <h2>Немного теории</h2>
+    </section>
 
-<section class="slide">
-    <h2>Game loop</h2>
-    <img src="./pictures/gameloop.png" class="gameloop_img" />
-    <style>
-        .gameloop_img {
-            margin: 150px auto 0px auto;
-            display: block;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>Game loop</h2>
+        <img src="./pictures/gameloop.png" class="gameloop_img" />
+        <style>
+            .gameloop_img {
+                margin: 150px auto 0px auto;
+                display: block;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>requestAnimationFrame</h2>
-    <pre>
+    <section class="slide">
+        <h2>requestAnimationFrame</h2>
+        <pre>
             <code>function tick (<mark class="mark">timestamp</mark>) {</code>
             <code class="comment">  /* recalculate */</code>
             <code class="comment">  /* redraw */</code>
@@ -117,21 +116,21 @@
             <code>}</code>
             <code>requestAnimationFrame(tick);</code>
         </pre>
-</section>
+    </section>
 
-<section class="slide slide_center">
-    <a href="./examples/example_tick.html" target="_blank" class="example">Tick example</a>
-    <style>
-        .example {
-            font-size: 80px;
-            line-height: 110px;
-        }
-    </style>
-</section>
+    <section class="slide slide_center">
+        <a href="./examples/example_tick.html" target="_blank" class="example">Tick example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>tick</h2>
-    <pre>
+    <section class="slide">
+        <h2>tick</h2>
+        <pre>
             <code>function tick (timestamp) {</code>
             <code class="comment">  // ...</code>
             <code>  circle.update(<mark class="mark">timestamp - lastTimeValue) / 1000</mark>);</code>
@@ -139,82 +138,82 @@
             <code>}</code>
             <code>requestAnimationFrame(tick);</code>
         </pre>
-</section>
+    </section>
 
-<section class="slide">
-    <h2>Circle.update</h2>
-    <pre>
+    <section class="slide">
+        <h2>Circle.update</h2>
+        <pre>
         <code class="comment">// ...</code>
         <code>this._position[0] += (<mark class="mark">timeDelta</mark> * this._speed) * </code>
         <code>   this._direction[0];</code>
         <code class="comment">// ...</code>
     </pre>
-</section>
+    </section>
 
-<!-- Раздел -->
-<section class="slide subtitle slide_center">
-    <h2>Графика</h2>
-</section>
+    <!-- Раздел -->
+    <section class="slide subtitle slide_center">
+        <h2>Графика</h2>
+    </section>
 
-<section class="slide">
-    <h2>Способы отображения игры в браузере</h2>
-    <ul>
-        <li>DOM</li>
-        <li>Canvas</li>
-        <li>SVG</li>
-    </ul>
-</section>
+    <section class="slide">
+        <h2>Способы отображения игры в браузере</h2>
+        <ul>
+            <li>DOM</li>
+            <li>Canvas</li>
+            <li>SVG</li>
+        </ul>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>DOM</h2>
-    <ul>
-        <li>image &amp; background-image: url()</li>
-        <li>position: absolute; top/left</li>
-        <li>transform &amp; filters</li>
-        <li>transition &amp; animation</li>
-    </ul>
-</section>
+    <section class="slide slide_center_content">
+        <h2>DOM</h2>
+        <ul>
+            <li>image &amp; background-image: url()</li>
+            <li>position: absolute; top/left</li>
+            <li>transform &amp; filters</li>
+            <li>transition &amp; animation</li>
+        </ul>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>Web animation?</h2>
-    <p>TODO</p>
-</section>
+    <section class="slide slide_center_content">
+        <h2>Web animation?</h2>
+        <p>TODO</p>
+    </section>
 
-<section class="slide">
-    <h2>Использование CSS трасформации</h2>
-    <pre>
+    <section class="slide">
+        <h2>Использование CSS трасформации</h2>
+        <pre>
         <code>transform: <mark class="mark">scaleY</mark>(0.5);</code>
         <code>transform: <mark class="mark">rotate</mark>(45deg);</code>
     </pre>
-    <div class=table-holder>
-        <div class=table>
-            <div class=row>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-            </div>
-            <div class=row>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-            </div>
-            <div class=row>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-            </div>
-            <div class=row>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
-                <div class=cell></div>
+        <div class=table-holder>
+            <div class=table>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
+                <div class=row>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                    <div class=cell></div>
+                </div>
             </div>
         </div>
-    </div>
-    <style>
+        <style>
             .table-holder {
                 transform: translate(-50%, -50%) scaleY(0.5);
                 position: absolute;
@@ -239,17 +238,17 @@
                 border: 1px solid black;
             }
         </style>
-</section>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>Спрайтовая анимация на CSS</h2>
-    <pre>
-        <code>animation: <mark class="mark">play</mark> 0.5s <mark class="important">steps(6)</mark> infinite;</code>
-        <code class="comment">/* Изменение свойства background-position в анимации */</code>
-    </pre>
-    <div class="person"></div>
-    <div class="person person_animation"></div>
-    <style>
+    <section class="slide slide_center_content">
+        <h2>Спрайтовая анимация на CSS</h2>
+        <pre>
+            <code>animation: <mark class="mark">play</mark> 0.5s <mark class="important">steps(6)</mark> infinite;</code>
+            <code class="comment">/* Изменение свойства background-position в анимации */</code>
+        </pre>
+        <div class="person"></div>
+        <div class="person person_animation"></div>
+        <style>
             .person {
                 margin: 50px auto 0px;
                 width: 408px;
@@ -272,472 +271,557 @@
                 }
             }
         </style>
-</section>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>Canvas</h2>
-    <ul>
-        <li>"Честный" интерфейс отображения графики</li>
-        <li>Больший контроль над отображением игры</li>
-        <li>3D в браузере</li>
-    </ul>
-</section>
+    <section class="slide slide_center_content">
+        <h2>Canvas</h2>
+        <ul>
+            <li>"Честный" интерфейс отображения графики</li>
+            <li>Больший контроль над отображением игры</li>
+            <li>3D в браузере</li>
+        </ul>
+    </section>
 
-<section class="slide">
-    <h2>Dirty Rectangle</h2>
-    <img src="./pictures/game_example.png" class="game_example" />
-    <style>
-        .game_example {
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>Dirty Rectangle</h2>
+        <img src="./pictures/game_example.png" class="game_example" />
+        <style>
+            .game_example {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>Dirty Rectangle</h2>
-    <img src="./pictures/game_example2.png" class="game_example" />
-    <style>
-        .game_example {
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>Dirty Rectangle</h2>
+        <img src="./pictures/game_example2.png" class="game_example" />
+        <style>
+            .game_example {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>Canvas буфер</h2>
-    <img src="./pictures/game_example2.png" class="game_example game_example2" />
-    <img src="./pictures/game_example3.png" class="game_example3" />
-    <style>
-        .game_example2 {
-            opacity: 0.5;
-        }
-        .game_example {
-            display: block;
-            margin: 0 auto;
-            border: 1px solid black;
-        }
+    <section class="slide">
+        <h2>Canvas буфер</h2>
+        <img src="./pictures/game_example2.png" class="game_example game_example2" />
+        <img src="./pictures/game_example3.png" class="game_example3" />
+        <style>
+            .game_example2 {
+                opacity: 0.5;
+            }
+            
+            .game_example {
+                display: block;
+                margin: 0 auto;
+                border: 1px solid black;
+            }
+            
+            .game_example3 {
+                position: absolute;
+                bottom: 125px;
+                right: 175px;
+                border: 1px solid black;
+            }
+        </style>
+    </section>
 
-        .game_example3 {
-            position: absolute;
-            bottom: 125px;
-            right: 175px;
-            border: 1px solid black;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>Активные области на canvas</h2>
+        <img src="./pictures/hotspot_back.png" class="hotspot_image hotspot_back" />
+        <img src="./pictures/hotspot_front.png" class="hotspot_image hotspot_front" />
+        <style>
+            .hotspot_image {
+                position: absolute;
+                transform: skewX(-25deg);
+            }
+            
+            .hotspot_front {
+                top: 210px;
+                left: 250px;
+            }
+            
+            .hotspot_back {
+                top: 250px;
+                left: 300px;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>Активные области на canvas</h2>
-    <img src="./pictures/hotspot_back.png" class="hotspot_image hotspot_back" />
-    <img src="./pictures/hotspot_front.png" class="hotspot_image hotspot_front" />
-    <style>
-        .hotspot_image {
-            position: absolute;
-            transform: skewX(-25deg);
-        }
+    <section class="slide">
+        <h2>Фигуры в API</h2>
+        <img src="./pictures/ymaps_example.png" class="ymaps_example_img" />
+        <style>
+            .ymaps_example_img {
+                width: 750px;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+        <style>
 
-        .hotspot_front {
-            top: 210px;
-            left: 250px;
-        }
+        </style>
+    </section>
 
-        .hotspot_back {
-            top: 250px;
-            left: 300px;
-        }
-    </style>
-</section>
+    <section class="slide slide_center_content">
+        <h2>WebGL</h2>
+        <p>TODO</p>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>WebGL</h2>
-    <p>TODO</p>
-</section>
+    <section class="slide slide_center_content">
+        <h2>SVG</h2>
+        <ul>
+            <li>Подходит для любого расширения и DPR</li>
+            <li>Невысокая производительность</li>
+        </ul>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>SVG</h2>
-    <ul>
-        <li>Подходит для любого расширения и DPR</li>
-        <li>Невысокая производительность</li>
-    </ul>
-</section>
+    <section class="slide slide_center_content">
+        <h2>Растеризация вектора</h2>
 
-<section class="slide slide_center_content">
-    <h2>Растеризация вектора</h2>
-
-    <div class="rastr_1">
-        <div>
-            <p>vector</p>
-            <img src="./pictures/rastr1_1.png" class="rastr1_img" />
+        <div class="rastr_1">
+            <div>
+                <p>vector</p>
+                <img src="./pictures/rastr1_1.png" class="rastr1_img" />
+            </div>
+            <div>
+                <div class="arrow_right"></div>
+            </div>
+            <div>
+                <p>bitmap</p>
+                <img src="./pictures/rastr1_3.png" class="rastr3_img" />
+            </div>
         </div>
-        <div>
-            <div class="arrow_right"></div>
+        <style>
+            .rastr_1 {
+                display: flex;
+                text-align: center;
+            }
+            
+            .rastr_1 > div {
+                flex-grow: 1;
+                height: 500px;
+                width: 33%;
+            }
+            
+            .rastr_1 > div:nth-child(2) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .rastr1_img {
+                height: 350px;
+            }
+            
+            .rastr2_img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .rastr3_img {
+                height: 400px;
+            }
+        </style>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Растеризация меток в API</h2>
+
+        <div class="rastr_2">
+            <div>&#60;svg color="<mark>{color}</mark>"/&#62;
+            </div>
+            <div>
+                <div class="arrow_right"></div>
+            </div>
+            <div>
+                <img src="./pictures/rastrt2.png" class="rastr3_img" />
+            </div>
         </div>
-        <div>
-            <p>bitmap</p>
-            <img src="./pictures/rastr1_3.png" class="rastr3_img" />
-        </div>
-    </div>
-    <style>
-        .rastr_1 {
-            display: flex;
-            text-align: center;
-        }
+        <style>
+            .rastr_2 {
+                display: flex;
+                text-align: center;
+                font-size: 27px;
+            }
+            
+            .rastr_2 > div {
+                flex-grow: 1;
+                height: 500px;
+                width: 33%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .rastr_2 > div img {
+                height: 300px;
+            }
+        </style>
+    </section>
 
-        .rastr_1 > div {
-            flex-grow: 1;
-            height: 500px;
-            width: 33%;
-        }
+    <section class="slide slide_center_content">
+        <h2>Fullscreen API</h2>
+        <p>TODO</p>
+    </section>
 
-        .rastr_1 > div:nth-child(2) {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    <section class="slide slide_center_content">
+        <h2>Web VR</h2>
+        <p>TODO здесь или оставить в конце?</p>
+    </section>
 
-        .rastr1_img {
-            height: 350px;
-        }
+    <!-- Раздел -->
+    <section class="slide subtitle slide_center">
+        <h2>Взаимодействие с игрой</h2>
+    </section>
 
-        .rastr2_img {
-            width: 100px;
-            height: 100px;
-        }
+    <section class="slide">
+        <h2>Способы ввода</h2>
+        <ul>
+            <li>Клавиатура &amp; мышь</li>
+            <li>Сенсорные касания</li>
+            <li>Gamepad API</li>
+            <li>Акселерометр</li>
+            <li>Pointer Lock API</li>
+        </ul>
+    </section>
 
-        .rastr3_img {
-            height: 400px;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>Клавиатура &amp; мышь</h2>
+        <p>TODO Надо ли тут что-то рассказывать?</p>
+    </section>
 
-<section class="slide slide_center_content">
-    <h2>Растеризация меток в API</h2>
+    <section class="slide">
+        <h2>Сенсорные касания</h2>
 
-    <div class="rastr_2">
-        <div>
-            &#60;svg/&#62;
-        </div>
-        <div>
-            <div class="arrow_right"></div>
-        </div>
-        <div>
-            <img src="./pictures/rastrt2.png" class="rastr3_img" />
-        </div>
-    </div>
-    <style>
-        .rastr_2 {
-            display: flex;
-            text-align: center;
-            font-size: 50px;
-        }
+        <table>
+            <tr>
+                <th scope="row"></th>
+                <th scope="row">Touch Events</th>
+                <th scope="row">Point Events</th>
+            </tr>
+            <tr>
+                <th scope="row">Принцип</th>
+                <td>Работает с жестами</td>
+                <td>Работает с касаниями</td>
+            </tr>
+            <tr>
+                <th scope="row">Разработчик</th>
+                <td>Apple</td>
+                <td>Microsoft</td>
+            </tr>
+            <tr>
+                <th scope="row">Поддержка</th>
+                <td>Webkit, Blink </td>
+                <td>Trident, Edge, Blink</td>
+            </tr>
+            <tr>
+                <th scope="row">Поддержка за флагом</th>
+                <td>Gecko, Edge</td>
+                <td>Gecko</td>
+            </tr>
+        </table>
+    </section>
 
-        .rastr_2 > div {
-            flex-grow: 1;
-            height: 500px;
-            width: 33%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .rastr_2 > div img {
-            height: 300px;
-        }
-    </style>
-</section>
-
-<!-- Раздел -->
-<section class="slide subtitle slide_center">
-    <h2>Взаимодействие с игрой</h2>
-</section>
-
-<section class="slide">
-    <h2>Способы ввода</h2>
-    <ul>
-        <li>Клавиатура &amp; мышь</li>
-        <li>Сенсорные касания</li>
-        <li>Gamepad API</li>
-        <li>Акселерометр</li>
-        <li>Pointer Lock API</li>
-    </ul>
-</section>
-
-<section class="slide">
-    <h2>Сенсорные касания</h2>
-
-    <table>
-        <tr>
-            <th scope="row"></th>
-            <th scope="row">Touch Events</th>
-            <th scope="row">Point Events</th>
-        </tr>
-        <tr>
-            <th scope="row">Принцип</th>
-            <td>Работает с жестами</td>
-            <td>Работает с касаниями</td>
-        </tr>
-        <tr>
-            <th scope="row">Разработчик</th>
-            <td>Apple</td>
-            <td>Microsoft</td>
-        </tr>
-        <tr>
-            <th scope="row">Поддержка</th>
-            <td>Webkit, Blink </td>
-            <td>Trident, Edge, Blink</td>
-        </tr>
-        <tr>
-            <th scope="row">Поддержка за флагом</th>
-            <td>Gecko, Edge</td>
-            <td>Gecko</td>
-        </tr>
-    </table>
-</section>
-
-<section class="slide">
-    <h2>TouchEvent</h2>
-    <pre>
+    <section class="slide">
+        <h2>TouchEvent</h2>
+        <pre>
         <code>canvas.addEventListener(<mark class="mark">'touchstart'</mark>, function(event) {</code>
         <code class="comment">    // Список всех прикосновений</code>
         <code>    event.touches;</code>
         <code>});</code>
     </pre>
-</section>
+    </section>
 
-<section class="slide">
-    <h2>Pointer Events</h2>
-    <pre>
+    <section class="slide">
+        <h2>Pointer Events</h2>
+        <pre>
         <code>canvas.addEventListener(<mark class="mark">'pointerdown'</mark>, function(event) {</code>
         <code class="comment">    // Обработка каждого прикосновения отдельно</code>
         <code>    event.pointerId;</code>
         <code>});</code>
     </pre>
-</section>
+    </section>
 
-<section class="slide">
-    <h2>Приведение к единому интерфейсу</h2>
+    <section class="slide">
+        <h2>Приведение к единому интерфейсу</h2>
 
-    <div class="touch_events events_block">
-        <div>touchstart</div>
-        <div>touchmove</div>
-        <div>...</div>
-    </div>
-    <div class="pointer_events events_block">
-        <div>pointerdown</div>
-        <div>pointermove</div>
-        <div>...</div>
-    </div>
-    <div class="result_events events_block">
-        <div>mousedown</div>
-        <div>mousemove</div>
-        <div>multitouchstart</div>
-        <div>multitouchmove</div>
-        <div>...</div>
-    </div>
+        <div class="touch_events events_block">
+            <div>touchstart</div>
+            <div>touchmove</div>
+            <div>...</div>
+        </div>
+        <div class="pointer_events events_block">
+            <div>pointerdown</div>
+            <div>pointermove</div>
+            <div>...</div>
+        </div>
+        <div class="result_events events_block">
+            <div>mousedown</div>
+            <div>mousemove</div>
+            <div>multitouchstart</div>
+            <div>multitouchmove</div>
+            <div>...</div>
+        </div>
 
-    <div class="arrow_right events_arrow"></div>
-    <style>
+        <div class="arrow_right events_arrow"></div>
+        <style>
+            .events_arrow {
+                position: absolute;
+                top: 415px;
+                left: 450px;
+            }
+            
+            .events_block {
+                position: absolute;
+                border: 1px solid black;
+                border-radius: 20px;
+                padding: 5px 20px;
+                width: 200px;
+            }
+            
+            .touch_events {
+                left: 200px;
+                top: 250px;
+            }
+            
+            .pointer_events {
+                left: 200px;
+                bottom: 150px;
+            }
+            
+            .result_events {
+                right: 200px;
+                top: 290px;
+                width: 250px;
+            }
+        </style>
+    </section>
 
-        .events_arrow {
-            position: absolute;
-            top: 415px;
-            left: 450px;
-        }
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] Sensor example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
 
-        .events_block {
-            position: absolute;
-            border: 1px solid black;
-            border-radius: 20px;
-            padding: 5px 20px;
-            width: 200px;
-        }
+    <section class="slide">
+        <h2>Gamepad API</h2>
+        <p>Получение состояние геймпадов в браузере</p>
+        <p class="next">Позволяет отслеживать нажатие кнопок, силу нажатия, положение стиков</p>
+        <p class="next">Поддерживается всеми браузерами кроме IE и Safari (уже в TP)</p>
+        <p class="next">Обладает непривычным интерфейсом</p>
+    </section>
 
-        .touch_events {
-            left: 200px;
-            top: 250px;
-        }
-
-        .pointer_events {
-            left: 200px;
-            bottom: 150px;
-        }
-
-        .result_events {
-            right: 200px;
-            top: 290px;
-            width: 250px;
-        }
-    </style>
-</section>
-
-<section class="slide">
-    <h2>Gamepad API</h2>
-    <p>Получение состояние геймпадов в браузере</p>
-    <p class="next">Позволяет отслеживать нажатие кнопок, силу нажатия, положение стиков</p>
-    <p class="next">Поддерживается всеми браузерами кроме IE и Safari (уже в TP)</p>
-    <p class="next">Обладает непривычным интерфейсом</p>
-</section>
-
-<section class="slide">
-    <h2>Интерфейс Gamepad API</h2>
-    <pre>
+    <section class="slide">
+        <h2>Интерфейс Gamepad API</h2>
+        <pre>
         <code class="comment">// Нет событий нажатий кнопок, движений стиков</code>
         <code class="comment">// Нужно самому опрашивать в Game loop</code>
         <code>var gamepad = navigator.getGamepads()[0];</code>
         <code>var button0 = gp.<mark class="mark">buttons</mark>[0]; <span class="comment">/* 0-16 */</span></code>
         <code>var axe0 = gp.<mark class="mark">axes</mark>[0]; <span class="comment">/* 0-3 */</span></code>
     </pre>
-</section>
+    </section>
 
-<section class="slide">
-    <h2> Gamepad API Show time!</h2> TODO
-</section>
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] Gamepad API example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>Pointer Lock</h2>
-    <p>TODO код с примером</p>
-</section>
+    <section class="slide">
+        <h2>Pointer Lock API</h2>
+        <p>TODO ?</p>
+    </section>
 
-<section class="slide">
-    <h2>Device Orientation</h2>
-    <p>TODO описание, код</p>
-</section>
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] Pointer Lock example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
 
-<!-- Раздел -->
-<section class="slide subtitle slide_center">
-    <h2>Звук</h2>
-</section>
+    <section class="slide">
+        <h2>Device Orientation</h2>
+        <p>TODO описание, код</p>
+    </section>
 
-<section class="slide">
-    <h2>Элемент audio</h2>
-    <pre>
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] Device Orientation example?</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
+
+    <!-- Раздел -->
+    <section class="slide subtitle slide_center">
+        <h2>Звук</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Элемент audio</h2>
+        <pre>
         <code>var myaudio = new <mark class="mark">Audio</mark>("sound_asset.mp3");</code>
         <code class="comment">// &#60;audio preload="auto" src="sound_asset.mp3"&#62;&#60;/audio&#62;</code>
         <code>myaudio.play();</code>
     </pre>
-</section>
+    </section>
 
-<section class="slide">
-    <h2>TODO Синхронизация звука</h2>
-    <img src="./pictures/sounds2.png" class="game_example" />
-    <style>
-        .game_example {
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>TODO Синхронизация звука</h2>
+        <img src="./pictures/sounds2.png" class="game_example" />
+        <style>
+            .game_example {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>Синхронизация звука</h2>
-    <pre>
+    <section class="slide">
+        <h2>Синхронизация звука</h2>
+        <pre>
         <code class="comment">// Текущее положение в аудиофайле</code>
         <code>myaudio.<mark class="mark">currentTime</mark></code>
         <code class="comment">// Громкость</code>
         <code>myaudio.<mark class="mark">volume</mark></code>
     </pre>
-</section>
+    </section>
 
-<section class="slide">
-    <h2>TODO Объемный звук</h2>
-    <img src="./pictures/sounds.png" class="game_example" />
-    <style>
-        .game_example {
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
-</section>
+    <section class="slide">
+        <h2>TODO Объемный звук</h2>
+        <img src="./pictures/sounds.png" class="game_example" />
+        <style>
+            .game_example {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </section>
 
-<section class="slide">
-    <h2>Web Audio API</h2>
-    <ul>
-        <li>Программный интерфейс для обработки звука</li>
-        <li>Объемное звучание</li>
-        <li>Звуковые эффекты</li>
-        <li>Синхронизация звука</li>
-    </ul>
-</section>
+    <section class="slide">
+        <h2>Web Audio API</h2>
+        <ul>
+            <li>Программный интерфейс для обработки потокового звука</li>
+            <li>Позволяет генерировать звук</li>
+            <li>Имеет поддержку всеми популярными браузерами (кроме IE)</li>
+            <li>Очень большая спецификация</li>
+        </ul>
+    </section>
 
-<section class="slide">
-    <h2>TODO panning example</h2>
-</section>
+    <section class="slide">
+        <h2>TODO Panning</h2>
+        <pre>
+        <code>var audioCtx = new AudioContext();</code>
+        <code>var source = audioCtx.createMediaElementSource(audio);</code>
+        <code>var panner = audioCtx.createStereoPanner();</code>
+        <code>panner.pan.value = 0; <span class="comment">// -1 -> 1</span></code>
+        <code>source.connect(panner);</code>
+        <code>panner.connect(audioCtx.destination);</code>
+    </pre>
+    </section>
 
-<!-- Раздел -->
-<section class="slide subtitle slide_center">
-    <h2>Сохранение игровых данных</h2>
-</section>
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] Panning example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
 
-<!-- TODO -->
+    <!-- Раздел -->
+    <section class="slide subtitle slide_center">
+        <h2>Сохранение игровых данных</h2>
+    </section>
 
-<!-- Раздел -->
-<section class="slide subtitle slide_center">
-    <h2>Сетевая игра</h2>
-</section>
+    <section class="slide">
+        <h2>TODO</h2>
+        <p>Прор локальные хранилища</p>
+    </section>
 
-<section class="slide">
-    <h2>TODO Про обычную синхоронизацию данных</h2>
-</section>
+    <!-- Раздел -->
+    <section class="slide subtitle slide_center">
+        <h2>Сетевая игра</h2>
+    </section>
 
-<section class="slide">
-    <h2>TODO Про проблемы синхронизации времени</h2>
-</section>
+    <section class="slide">
+        <h2>TODO Про обычную синхоронизацию данных</h2>
+    </section>
 
-<section class="slide">
-    <h2>TODO Про постоянное соединение через WebSocket</h2>
-</section>
+    <section class="slide">
+        <h2>TODO Про проблемы синхронизации времени</h2>
+    </section>
 
-<!-- Раздел -->
+    <section class="slide">
+        <h2>TODO Про постоянное соединение через WebSocket</h2>
+    </section>
 
-<section class="slide subtitle slide_center">
-    <h2>Итог</h2>
-</section>
+    <!-- Раздел -->
 
-<section class="slide">
-    <h2>TODO Сам итог</h2>
-</section>
+    <section class="slide subtitle slide_center">
+        <h2>Итог</h2>
+    </section>
 
-<section class="slide">
-    <h2>TODO Про некоторые другие спецификации. К примеру, Payment Request API</h2>
-</section>
+    <section class="slide">
+        <h2>TODO Сам итог</h2>
+    </section>
 
-<section class="slide subtitle slide_center">
-    <h2>Спасибо за внимание!</h2>
-</section>
+    <section class="slide">
+        <h2>TODO Про некоторые другие спецификации. К примеру, Payment Request API</h2>
+    </section>
 
-<section class="slide subtitle slide_center credits">
-    <div>
-        <p>
-            Презентация и примеры<br/>
-            <a href="https://github.com/vsesh/wsd-28-01-2017" target="_blank">github.com/vsesh/wsd-28-01-2017</a>
-        </p>
-    </div>
-    <div>
-        <p>
-            Всеволод Шмыров<br/>
-            <a href=http://vsesh.me target="_blank">vsesh.me</a>
-        </p>
-    </div>
-    <style>
+    <section class="slide subtitle slide_center">
+        <h2>Спасибо за внимание!</h2>
+    </section>
 
-        .credits > div:first-child {
-            border-bottom: 1px solid black;
-            margin-bottom: 0px;
-        }
+    <section class="slide subtitle slide_center credits">
+        <div>
+            <p>
+                Презентация и примеры<br/>
+                <a href="https://github.com/vsesh/wsd-28-01-2017" target="_blank">github.com/vsesh/wsd-28-01-2017</a>
+            </p>
+        </div>
+        <div>
+            <p>
+                Всеволод Шмыров<br/>
+                <a href=http://vsesh.me target="_blank">vsesh.me</a>
+            </p>
+        </div>
+        <style>
+            .credits > div:first-child {
+                border-bottom: 1px solid black;
+                margin-bottom: 0px;
+            }
+            
+            .credits > div {
+                margin: 20px;
+                width: 50%;
+                text-align: center;
+            }
+        </style>
+    </section>
 
-        .credits > div {
-            margin: 20px;
-            width: 50%;
-            text-align: center;
-        }
-    </style>
-</section>
-
-<div class="progress"></div>
-<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-<!-- Photos by John Carey, fiftyfootshadows.net -->
+    <div class="progress"></div>
+    <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+    <!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 
 </html>
