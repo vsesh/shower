@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-4x3.css">
+    <link rel="stylesheet" href="node_modules/shower-material/styles/screen-4x3.css">
     <style>
         .slide_center {
             display: flex;
@@ -14,6 +14,10 @@
             align-items: center;
             justify-content: center;
             padding-top: 0;
+        }
+        
+        .slide_center::after {
+            content: '';
         }
         
         .subtitle h2 {
@@ -43,6 +47,14 @@
             border-bottom: 30px solid transparent;
             border-left: 40px solid black;
         }
+        
+        .ref-link {
+            position: absolute;
+            bottom: 58px;
+            right: 112px;
+            font-size: 20px;
+            line-height: 30px;
+        }
     </style>
     <script src="node_modules/shower-core/shower.min.js"></script>
 </head>
@@ -52,6 +64,20 @@
         <h1>Играем в браузере</h1>
         <p>Обзорный доклад WEB-спецификаций, которые позволяют создавать игры в браузере</p>
     </header>
+
+    <section class="slide slide-logo">
+        <img class="cover ya-logo" src="./pictures/yandex.svg" />
+        <style>
+            .ya-logo {
+                width: 400px;
+            }
+            
+            .slide-logo::after {
+                content: '';
+            }
+        </style>
+    </section>
+
     <section class="slide slide_center" id="title">
         <h2>Играем в браузере</h2>
         <p><a href="http://vsesh.me">Всеволод Шмыров</a></p>
@@ -60,15 +86,15 @@
             #title h2 {
                 color: #000;
                 text-align: center;
-                font-size: 100px;
+                font-size: 70px;
             }
-
+            
             #title a {
-                font-size: 32px;
+                font-size: 22px;
             }
-
+            
             #title .small-text {
-                font-size: 18px;
+                font-size: 15px;
             }
         </style>
     </section>
@@ -76,23 +102,27 @@
     <section class="slide">
         <h2>Кто я такой?</h2>
         <p>Меня зовут Сева</p>
-        <p class="next">Ведущий разработчик Конструктора карт Яндекса</p>
+        <p class="next">Разработчик API Яндекс.Карт</p>
         <p class="next">В прошлом flash-разработчик игр для социальных сетей</p>
+        <p class="next">Игры - мое хобби</p>
     </section>
 
     <section class="slide">
         <h2>Почему такая тема?</h2>
         <p>Внешние браузерные плагины вымирают</p>
-        <p class="next">Web-спецификации наоборот предоставляют всё больше возможностей</p>
-        <p class="next">Появляется всё больше готовых решений</p>
+        <p class="next">Браузеры предоставляют всё больше возможностей</p>
     </section>
 
-    <section class="slide subtitle slide_center">
+    <section class="slide">
+        <h2>Готовые решения</h2>
         <img src="./pictures/engine.png" class="engine_img" />
+        <a href="http://html5gameengine.com" target="_blank" class="ref-link">html5gameengine.com</a>
         <style>
             .engine_img {
-                height: 530px;
+                height: 450px;
                 border: 1px solid black;
+                margin: 0 auto;
+                display: block;
             }
         </style>
     </section>
@@ -112,6 +142,7 @@
     <section class="slide">
         <h2>Game loop</h2>
         <img src="./pictures/gameloop.png" class="gameloop_img" />
+        <a href="https://clck.ru/AUnco" target="_blank" class="ref-link">Anatomy of a video game</a>
         <style>
             .gameloop_img {
                 margin: 150px auto 0px auto;
@@ -130,6 +161,7 @@
             <code>}</code>
             <code>requestAnimationFrame(tick);</code>
         </pre>
+        <a href="https://clck.ru/AUnco" target="_blank" class="ref-link">Anatomy of a video game</a>
     </section>
 
     <section class="slide slide_center">
@@ -147,7 +179,7 @@
         <pre>
             <code>function tick (timestamp) {</code>
             <code class="comment">  // ...</code>
-            <code>  circle.update(<mark class="mark">timestamp - lastTimeValue) / 1000</mark>);</code>
+            <code>  circle.update(<mark class="mark">(timestamp - lastTimeValue) / 1000</mark>);</code>
             <code class="comment">  // ...</code>
             <code>}</code>
             <code>requestAnimationFrame(tick);</code>
@@ -157,11 +189,11 @@
     <section class="slide">
         <h2>Circle.update</h2>
         <pre>
-        <code class="comment">// ...</code>
-        <code>this._position[0] += (<mark class="mark">timeDelta</mark> * this._speed) * </code>
-        <code>   this._direction[0];</code>
-        <code class="comment">// ...</code>
-    </pre>
+            <code class="comment">// ...</code>
+            <code>this._position[0] += (<mark class="mark">timeDelta</mark> * this._speed) * </code>
+            <code>   this._direction[0];</code>
+            <code class="comment">// ...</code>
+        </pre>
     </section>
 
     <!-- Раздел -->
@@ -170,7 +202,7 @@
     </section>
 
     <section class="slide">
-        <h2>Способы отображения игры в браузере</h2>
+        <h2>Способы отображения игр</h2>
         <ul>
             <li>DOM</li>
             <li>Canvas</li>
@@ -181,16 +213,11 @@
     <section class="slide slide_center_content">
         <h2>DOM</h2>
         <ul>
+            <li>position: absolute</li>
             <li>image &amp; background-image: url()</li>
-            <li>position: absolute; top/left</li>
             <li>transform &amp; filters</li>
             <li>transition &amp; animation</li>
         </ul>
-    </section>
-
-    <section class="slide slide_center_content">
-        <h2>Web animation?</h2>
-        <p>TODO</p>
     </section>
 
     <section class="slide">
@@ -288,11 +315,6 @@
     </section>
 
     <section class="slide slide_center_content">
-        <h2>TODO</h2>
-        <p>Про использование DOM совместно с другими технологиями</p>
-    </section>
-
-    <section class="slide slide_center_content">
         <h2>Canvas</h2>
         <ul>
             <li>"Честный" интерфейс отображения графики</li>
@@ -302,7 +324,7 @@
     </section>
 
     <section class="slide">
-        <h2>Dirty Rectangle</h2>
+        <h2>Dirty Rectangles</h2>
         <img src="./pictures/game_example.png" class="game_example" />
         <style>
             .game_example {
@@ -313,7 +335,7 @@
     </section>
 
     <section class="slide">
-        <h2>Dirty Rectangle</h2>
+        <h2>Dirty Rectangles</h2>
         <img src="./pictures/game_example2.png" class="game_example" />
         <style>
             .game_example {
@@ -345,6 +367,16 @@
                 border: 1px solid black;
             }
         </style>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Несколько canvas</h2>
+        <p>TODO</p>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Несколько слоев</h2>
+        <p>TODO</p>
     </section>
 
     <section class="slide">
@@ -386,17 +418,13 @@
 
     <section class="slide slide_center_content">
         <h2>WebGL</h2>
-        <p>TODO</p>
-    </section>
-
-    <section class="slide slide_center_content">
-        <h2>WebGL</h2>
         <p>TODO про отображение 2d через WebGL</p>
     </section>
 
     <section class="slide slide_center_content">
         <h2>WebGL</h2>
         <p>TODO про честное 3D. Пример Blend4Web, панорамы</p>
+        <a href="http://eyes.nasa.gov/curiosity/" target="_blank" class="ref-link">Пример NASA</a>
     </section>
 
     <section class="slide slide_center_content">
@@ -473,7 +501,7 @@
             .rastr_2 {
                 display: flex;
                 text-align: center;
-                font-size: 27px;
+                font-size: 25px;
             }
             
             .rastr_2 > div {
@@ -492,13 +520,80 @@
     </section>
 
     <section class="slide slide_center_content">
-        <h2>Fullscreen API</h2>
-        <p>TODO</p>
+        <h2>Растеризация SVG</h2>
+
+        <div class="block-scheme1">
+            <div class="block">SVG</div>
+            <div class="block">CANVAS</div>
+            <div class="block">base64 / BLOB</div>
+            <div class="block">background-image</div>
+        </div>
+
+        <style>
+            .block-scheme1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 425px;
+                margin-top: 75px;
+                position: relative;
+            }
+            
+            .block-scheme1::before {
+                border: 2px solid black;
+                position: absolute;
+                left: 50%;
+                top: 35px;
+                bottom: 35px;
+                content: ' ';
+                z-index: -1;
+            }
+            
+            .block-scheme1 .block {
+                background-color: #f0f0f0;
+                margin: 5px 0px;
+                text-align: center;
+                width: 40%;
+                border-radius: 4px;
+            }
+        </style>
     </section>
 
     <section class="slide slide_center_content">
-        <h2>Web VR</h2>
-        <p>TODO здесь или оставить в конце?</p>
+        <h2>Fullscreen API</h2>
+        <ul>
+            <li>Позволяет "развернуть" элемента во весь экран</li>
+            <li class="next">Обладает очень простым интерфейсом</li>
+            <li class="next">Не очень широкая поддержка браузерами</li>
+            <li class="next">Различия в реализации</li>
+            <li class="next">Можно вызвать только по действию пользователя</li>
+        </ul>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen" target="_blank" class="ref-link">MDN</a>
+    </section>
+
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] fullscreen example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Fullscreen API</h2>
+        <pre>
+            <code>elem.<mark>requestFullScreen</mark>();</code>
+            <code class="comment">...</code>
+            <code>document.<mark>fullscreenElement</mark></code>
+            <code class="comment">...</code>
+            <code>.elem:<mark>fullscreen</mark> {</code>
+            <code>    <span class="comment">/* */</span></code>
+            <code>}</code>
+        </pre>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen" target="_blank" class="ref-link">MDN</a>
     </section>
 
     <!-- Раздел -->
@@ -527,27 +622,34 @@
 
         <table>
             <tr>
-                <th scope="row"></th>
                 <th scope="row">Touch Events</th>
-                <th scope="row">Point Events</th>
+                <th scope="row">Pointer Events</th>
             </tr>
             <tr>
-                <th scope="row">Принцип</th>
                 <td>Работает с жестами</td>
                 <td>Работает с касаниями</td>
             </tr>
             <tr>
-                <th scope="row">Разработчик</th>
                 <td>Apple</td>
                 <td>Microsoft</td>
             </tr>
+        </table>
+    </section>
+
+
+    <section class="slide">
+        <h2>Сенсорные касания</h2>
+
+        <table>
             <tr>
-                <th scope="row">Поддержка</th>
+                <th scope="row">Touch Events</th>
+                <th scope="row">Pointer Events</th>
+            </tr>
+            <tr>
                 <td>Webkit, Blink </td>
                 <td>Trident, Edge, Blink</td>
             </tr>
             <tr>
-                <th scope="row">Поддержка за флагом</th>
                 <td>Gecko, Edge</td>
                 <td>Gecko</td>
             </tr>
@@ -557,21 +659,21 @@
     <section class="slide">
         <h2>TouchEvent</h2>
         <pre>
-        <code>canvas.addEventListener(<mark class="mark">'touchstart'</mark>, function(event) {</code>
-        <code class="comment">    // Список всех прикосновений</code>
-        <code>    event.touches;</code>
-        <code>});</code>
-    </pre>
+            <code>canvas.addEventListener(<mark class="mark">'touchstart'</mark>, function(event) {</code>
+            <code class="comment">    // Список всех прикосновений</code>
+            <code>    event.touches;</code>
+            <code>});</code>
+        </pre>
     </section>
 
     <section class="slide">
         <h2>Pointer Events</h2>
         <pre>
-        <code>canvas.addEventListener(<mark class="mark">'pointerdown'</mark>, function(event) {</code>
-        <code class="comment">    // Обработка каждого прикосновения отдельно</code>
-        <code>    event.pointerId;</code>
-        <code>});</code>
-    </pre>
+            <code>canvas.addEventListener(<mark class="mark">'pointerdown'</mark>, function(event) {</code>
+            <code class="comment">    // Обработка каждого прикосновения отдельно</code>
+            <code>    event.pointerId;</code>
+            <code>});</code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -641,10 +743,23 @@
 
     <section class="slide">
         <h2>Gamepad API</h2>
-        <p>Получение состояние геймпадов в браузере</p>
-        <p class="next">Позволяет отслеживать нажатие кнопок, силу нажатия, положение стиков</p>
-        <p class="next">Поддерживается всеми браузерами кроме IE и Safari (уже в TP)</p>
-        <p class="next">Обладает непривычным интерфейсом</p>
+        <ul>
+            <li>Получение состояние геймпадов в браузере</li>
+            <li class="next">Позволяет отслеживать нажатие кнопок, положение стиков</li>
+            <!-- силу нажатия, -->
+            <li class="next">Поддерживается всеми браузерами кроме IE и Safari (уже в TP)</li>
+            <li class="next">Обладает непривычным интерфейсом</li>
+        </ul>
+    </section>
+
+    <section class="slide slide_center">
+        <a href="#" target="_blank" class="example">[TODO] example</a>
+        <style>
+            .example {
+                font-size: 80px;
+                line-height: 110px;
+            }
+        </style>
     </section>
 
     <section class="slide">
@@ -658,19 +773,14 @@
     </pre>
     </section>
 
-    <section class="slide slide_center">
-        <a href="#" target="_blank" class="example">[TODO] example</a>
-        <style>
-            .example {
-                font-size: 80px;
-                line-height: 110px;
-            }
-        </style>
-    </section>
-
     <section class="slide">
         <h2>Pointer Lock API</h2>
-        <p>TODO</p>
+        <ul>
+            <li>Никак не связан с Pointer Events</li>
+            <li class="next">Очень похожа на Fullscreen API, но работает с курсором</li>
+            <li class="next">Имеет значительно большую поддержку, чем Fullscreen API</li>
+        </ul>
+        <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_Lock_API" target="_blank" class="ref-link">MDN</a>
     </section>
 
     <section class="slide slide_center">
@@ -681,6 +791,30 @@
                 line-height: 110px;
             }
         </style>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Pointer Lock API</h2>
+        <pre>
+            <code>elem.<mark>requestPointerLock</mark>();</code>
+            <code class="comment">...</code>
+            <code>document.<mark>pointerLockElement</mark></code>
+        </pre>
+        <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_Lock_API" target="_blank" class="ref-link">MDN</a>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Pointer Lock API</h2>
+        <pre>
+            <pre>
+                <code>canvas.addEventListener('mousemove', function(event) {</code>
+                <code class="comment">    // Смещение с предыдущего события</code>
+                <code>    event.<mark>movementX</mark>;</code>
+                <code>    event.<mark>movementY</mark>;</code>
+                <code>});</code>
+            </pre>
+        </pre>
+        <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_Lock_API" target="_blank" class="ref-link">MDN</a>
     </section>
 
     <section class="slide">
@@ -797,6 +931,11 @@
 
     <section class="slide subtitle slide_center">
         <h2>Будущее</h2>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Web animation?</h2>
+        <p>TODO</p>
     </section>
 
     <section class="slide">
