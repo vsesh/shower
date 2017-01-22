@@ -60,6 +60,17 @@
             font-size: 60px;
             line-height: 70px;
         }
+
+        .comment {
+            color: darkgrey;
+        }
+
+        .game_example {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid black;
+            width: 725px;
+        }
     </style>
     <script src="node_modules/shower-core/shower.min.js"></script>
 </head>
@@ -196,8 +207,12 @@
     </section>
 
     <section class="slide">
-        <h2>Про тики в неактивной вкладке</h2>
-        <p>TODO</p>
+        <h2>RAF в неактивной вкладке</h2>
+        <pre>
+            <code>document.addEventListener(<mark>'visibilitychange'</mark>, function () {</code>
+            <code>    lastTimeValue = performance.now();</code>
+            <code>});</code>
+        </pre>
     </section>
 
     <!-- Раздел -->
@@ -330,23 +345,11 @@
     <section class="slide">
         <h2>Dirty Rectangles</h2>
         <img src="./pictures/game_example.png" class="game_example" />
-        <style>
-            .game_example {
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
     </section>
 
     <section class="slide">
         <h2>Dirty Rectangles</h2>
         <img src="./pictures/game_example2.png" class="game_example" />
-        <style>
-            .game_example {
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
     </section>
 
     <section class="slide">
@@ -357,13 +360,7 @@
             .game_example2 {
                 opacity: 0.5;
             }
-            
-            .game_example {
-                display: block;
-                margin: 0 auto;
-                border: 1px solid black;
-            }
-            
+
             .game_example3 {
                 position: absolute;
                 bottom: 125px;
@@ -374,13 +371,32 @@
     </section>
 
     <section class="slide slide_center_content">
-        <h2>Несколько canvas</h2>
-        <p>TODO</p>
-    </section>
-
-    <section class="slide slide_center_content">
         <h2>Несколько слоев</h2>
-        <p>TODO</p>
+        <img src="./pictures/game_example_layer3.png" class="game_example game_example4 game_example41" />
+        <img src="./pictures/game_example_layer2.png" class="game_example game_example4 game_example42" />
+        <img src="./pictures/game_example_layer1.png" class="game_example game_example4 game_example43" />
+        <style>
+            .game_example4 {
+                position: absolute;
+                transform: translateX(-50%) skewX(-20deg);
+                width: 525px;
+            }
+
+            .game_example43 {
+                left: 400px;
+                top: 200px;
+            }
+
+            .game_example42 {
+                left: 500px;
+                top: 250px;
+            }
+
+            .game_example41 {
+                left: 600px;
+                top: 300px;
+            }
+        </style>
     </section>
 
     <section class="slide">
@@ -390,7 +406,7 @@
         <style>
             .hotspot_image {
                 position: absolute;
-                transform: skewX(-25deg);
+                transform: skewX(-20deg);
             }
             
             .hotspot_front {
@@ -408,9 +424,10 @@
     <section class="slide">
         <h2>Фигуры в API</h2>
         <img src="./pictures/ymaps_example.png" class="ymaps_example_img" />
+        <a href="https://yandex.ru/maps/213/moscow/?um=constructor%3AsrlnRDI71dHP8lp584DcIIpL88yk4jJs&source=constructorLink&mode=usermaps" target="_blank" class="ref-link">Map</a>
         <style>
             .ymaps_example_img {
-                width: 750px;
+                height: 480px;
                 display: block;
                 margin: 0 auto;
             }
@@ -606,7 +623,15 @@
 
     <section class="slide">
         <h2>Клавиатура &amp; мышь</h2>
-        <p>TODO Надо ли тут что-то рассказывать?</p>
+        <pre>
+            <code>elem.addEventListener(<mark class="mark">'mousemove'</mark>, function(event) {</code>
+            <code class="comment">    // do something awesome!</code>
+            <code>});</code>
+            <code> </code>
+            <code>elem.addEventListener(<mark class="mark">'keyup'</mark>, function(event) {</code>
+            <code class="comment">    // ...</code>
+            <code>});</code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -815,12 +840,6 @@
     <section class="slide">
         <h2>TODO Синхронизация звука</h2>
         <img src="./pictures/sounds2.png" class="game_example" />
-        <style>
-            .game_example {
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
     </section>
 
     <section class="slide">
@@ -836,12 +855,6 @@
     <section class="slide">
         <h2>TODO Объемный звук</h2>
         <img src="./pictures/sounds.png" class="game_example" />
-        <style>
-            .game_example {
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
     </section>
 
     <section class="slide">
