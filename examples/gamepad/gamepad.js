@@ -1,5 +1,3 @@
-
-
 var pupils;
 
 function tick () {
