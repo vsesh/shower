@@ -16,9 +16,9 @@ class Circle {
     update(timeDelta) {
     
         if (!this._elem) {
-        this._elem = document.createElement('div');
+            this._elem = document.createElement('div');
             this._elem.className = 'circle';
-        document.body.appendChild(this._elem);
+            document.body.appendChild(this._elem);
         }
 
         // calculate new position
@@ -54,10 +54,9 @@ class Circle {
 
 
 // create circles
-var circles = [];
 var i = 200;
 while(--i>-1) {
-    circles.push(
+    gameObjects.push(
         new Circle({
             position: [AREA[0] / 2, AREA[1] / 2], 
             direction: getRandDirection(),
@@ -75,24 +74,3 @@ function getRandDirection () {
         Math.sin(rand)
     ];
 }
-
-
-// game tick
-var lastTimeValue = 0;
-function tick (time) {
-    var timeDelta = (time - lastTimeValue) / 1000; // time between two ticks in seconds
-
-    circles.forEach(function (circle) {
-        circle.update(timeDelta);
-    });
-
-    // fps -> Math.round(1000 / (time - lastTimeValue));
-
-    lastTimeValue = time;
-    requestAnimationFrame(tick);
-}
-requestAnimationFrame(tick);
-
-document.addEventListener('visibilitychange', function () {
-    lastTimeValue = performance.now();
-});
