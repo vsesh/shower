@@ -55,16 +55,16 @@
             font-size: 20px;
             line-height: 30px;
         }
-
+        
         .example {
             font-size: 60px;
             line-height: 70px;
         }
-
+        
         .comment {
             color: darkgrey;
         }
-
+        
         .game_example {
             display: block;
             margin: 0 auto;
@@ -360,7 +360,7 @@
             .game_example2 {
                 opacity: 0.5;
             }
-
+            
             .game_example3 {
                 position: absolute;
                 bottom: 125px;
@@ -381,17 +381,17 @@
                 transform: translateX(-50%) skewX(-20deg);
                 width: 525px;
             }
-
+            
             .game_example43 {
                 left: 400px;
                 top: 200px;
             }
-
+            
             .game_example42 {
                 left: 500px;
                 top: 250px;
             }
-
+            
             .game_example41 {
                 left: 600px;
                 top: 300px;
@@ -444,8 +444,15 @@
 
     <section class="slide slide_center_content">
         <h2>WebGL</h2>
-        <p>TODO про честное 3D. Пример Blend4Web, панорамы</p>
+        <img src="./pictures/nasa.png" class="nasa_img" />
         <a href="http://eyes.nasa.gov/curiosity/" target="_blank" class="ref-link">Пример NASA</a>
+        <style>
+            .nasa_img {
+                width: 670px;
+                margin: 0 auto;
+                display: block;
+            }
+        </style>
     </section>
 
     <section class="slide slide_center_content">
@@ -868,15 +875,15 @@
     </section>
 
     <section class="slide">
-        <h2>TODO Panning</h2>
+        <h2>Panning</h2>
         <pre>
-        <code>var audioCtx = new AudioContext();</code>
-        <code>var source = audioCtx.createMediaElementSource(audio);</code>
-        <code>var panner = audioCtx.createStereoPanner();</code>
-        <code>panner.pan.value = 0; <span class="comment">// -1 -> 1</span></code>
-        <code>source.connect(panner);</code>
-        <code>panner.connect(audioCtx.destination);</code>
-    </pre>
+            <code>var audioCtx = new AudioContext();</code>
+            <code>var source = audioCtx.createMediaElementSource(audio);</code>
+            <code>var panner = audioCtx.<mark>createStereoPanner</mark>();</code>
+            <code>panner.pan.<mark>value</mark> = 0; <span class="comment">// -1 -> 1</span></code>
+            <code>source.connect(panner);</code>
+            <code>panner.connect(audioCtx.destination);</code>
+        </pre>
     </section>
 
     <section class="slide slide_center">
@@ -885,34 +892,101 @@
 
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
-        <h2>Сетевая игра</h2>
+        <h2>Сохранение данных, синхронизация</h2>
     </section>
 
     <section class="slide">
-        <h2>TODO Про обычную синхоронизацию данных</h2>
+        <h2>Сохранение данных</h2>
+        <ul>
+            <li>Локальные хранилища (localStorage, indexedDB)</li>
+            <li>Сервер (XHR, fetch)</li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>TODO Про проблемы синхронизации времени</h2>
+        <h2>Slither.IO</h2>
+        <img src="./pictures/slither.io.png" class="slither_io" />
+        <a href="http://slither.io" target="_blank" class="ref-link">slither.io</a>
+        <style>
+            .slither_io {
+                width: 670px;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
     </section>
 
     <section class="slide">
-        <h2>TODO Про постоянное соединение через WebSocket</h2>
+        <h2>Web Socket</h2>
+        <ul>
+            <li>Постоянное соединение с сервером</li>
+            <li>Полная поддержка браузерами</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Web Socket</h2>
+        <p>TODO немного более подробно про Web Socket</p>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Нетрадиционный Web Socket (?)</h2>
+
+        <div class="block-scheme2">
+            <div class="block">Kinect driver</div>
+            <div class="block">.air app</div>
+            <div class="block">Web Socket</div>
+            <div class="block">Pointer Events</div>
+        </div>
+
+        <style>
+            .block-scheme2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 425px;
+                margin-top: 75px;
+                position: relative;
+            }
+            
+            .block-scheme2::before {
+                border: 2px solid black;
+                position: absolute;
+                left: 50%;
+                top: 35px;
+                bottom: 35px;
+                content: ' ';
+                z-index: -1;
+            }
+            
+            .block-scheme2 .block {
+                background-color: #f0f0f0;
+                margin: 5px 0px;
+                text-align: center;
+                width: 40%;
+                border-radius: 4px;
+            }
+        </style>
     </section>
 
     <!-- Раздел -->
-
     <section class="slide subtitle slide_center">
         <h2>Будущее</h2>
     </section>
 
     <section class="slide slide_center_content">
-        <h2>Web animation?</h2>
+        <h2>Web animation</h2>
         <p>TODO</p>
     </section>
 
     <section class="slide">
         <h2>Web VR</h2>
+        <p>TODO</p>
+    </section>
+
+    <section class="slide">
+        <h2>WebRTC</h2>
         <p>TODO</p>
     </section>
 
