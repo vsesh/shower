@@ -24,6 +24,31 @@
             color: #000;
             text-align: center;
             font-size: 70px;
+            line-height: 170px;
+            width: 100%;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .subtitle h2 span {
+            z-index: 10;
+            position: relative;
+        }
+
+        .subtitle .cover {
+            -webkit-filter: blur(6px);
+            filter: blur(6px);
+        }
+
+        .subtitle h2::before {
+            content: '';
+            z-index: 5px;
+            position: absolute;
+            top: 0;
+            left: -300px;
+            right: -300px;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         
         .arrow_right {
@@ -343,6 +368,44 @@
     </section>
 
     <section class="slide">
+        <h2>Активные области на canvas</h2>
+        <img src="./pictures/hotspot_back.png" class="hotspot_image hotspot_back" />
+        <img src="./pictures/hotspot_front.png" class="hotspot_image hotspot_front" />
+        <style>
+            .hotspot_image {
+                position: absolute;
+                transform: skewX(-20deg);
+            }
+            
+            .hotspot_front {
+                top: 210px;
+                left: 250px;
+            }
+            
+            .hotspot_back {
+                top: 250px;
+                left: 300px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Фигуры в API</h2>
+        <img src="./pictures/ymaps_example.png" class="ymaps_example_img" />
+        <a href="https://yandex.ru/maps/213/moscow/?um=constructor%3AsrlnRDI71dHP8lp584DcIIpL88yk4jJs&source=constructorLink&mode=usermaps" target="_blank" class="ref-link">Map</a>
+        <style>
+            .ymaps_example_img {
+                height: 480px;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+        <style>
+
+        </style>
+    </section>
+
+    <section class="slide">
         <h2>Dirty Rectangles</h2>
         <img src="./pictures/game_example.png" class="game_example" />
     </section>
@@ -399,47 +462,9 @@
         </style>
     </section>
 
-    <section class="slide">
-        <h2>Активные области на canvas</h2>
-        <img src="./pictures/hotspot_back.png" class="hotspot_image hotspot_back" />
-        <img src="./pictures/hotspot_front.png" class="hotspot_image hotspot_front" />
-        <style>
-            .hotspot_image {
-                position: absolute;
-                transform: skewX(-20deg);
-            }
-            
-            .hotspot_front {
-                top: 210px;
-                left: 250px;
-            }
-            
-            .hotspot_back {
-                top: 250px;
-                left: 300px;
-            }
-        </style>
-    </section>
-
-    <section class="slide">
-        <h2>Фигуры в API</h2>
-        <img src="./pictures/ymaps_example.png" class="ymaps_example_img" />
-        <a href="https://yandex.ru/maps/213/moscow/?um=constructor%3AsrlnRDI71dHP8lp584DcIIpL88yk4jJs&source=constructorLink&mode=usermaps" target="_blank" class="ref-link">Map</a>
-        <style>
-            .ymaps_example_img {
-                height: 480px;
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
-        <style>
-
-        </style>
-    </section>
-
     <section class="slide slide_center_content">
         <h2>WebGL</h2>
-        <p>TODO про отображение 2d через WebGL</p>
+        <p>TODO как-то визуализировать отображение 2d через WebGL</p>
     </section>
 
     <section class="slide slide_center_content">
@@ -614,7 +639,8 @@
 
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
-        <h2>Взаимодействие с игрой</h2>
+        <h2><span>Управление</span></h2>
+        <img src="./pictures/control_part.JPG" class="cover" />
     </section>
 
     <section class="slide">
@@ -641,43 +667,22 @@
         </pre>
     </section>
 
-    <section class="slide">
+    <section class="slide slide_center_content">
         <h2>Сенсорные касания</h2>
-
-        <table>
-            <tr>
-                <th scope="row">Touch Events</th>
-                <th scope="row">Pointer Events</th>
-            </tr>
-            <tr>
-                <td>Работает с жестами</td>
-                <td>Работает с касаниями</td>
-            </tr>
-            <tr>
-                <td>Apple</td>
-                <td>Microsoft</td>
-            </tr>
-        </table>
-    </section>
-
-
-    <section class="slide">
-        <h2>Сенсорные касания</h2>
-
-        <table>
-            <tr>
-                <th scope="row">Touch Events</th>
-                <th scope="row">Pointer Events</th>
-            </tr>
-            <tr>
-                <td>Webkit, Blink </td>
-                <td>Trident, Edge, Blink</td>
-            </tr>
-            <tr>
-                <td>Gecko, Edge</td>
-                <td>Gecko</td>
-            </tr>
-        </table>
+        <ul>
+            <li>
+                Touch Events
+                <ul>
+                    <li>работа с жестами</li>
+                </ul>
+            </li>
+            <li>
+                Pointer Events
+                <ul>
+                    <li>работа с каждым касанием отдельно</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -698,6 +703,26 @@
             <code>    event.pointerId;</code>
             <code>});</code>
         </pre>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>TODO Сенсорные касания (иконки браузеров?)</h2>
+        <ul>
+            <li>
+                Touch Events
+                <ul>
+                    <li>Поддержка - Webkit, Blink</li>
+                    <li>За флагом - Gecko, Edge</li>
+                </ul>
+            </li>
+            <li>
+                Pointer Events
+                <ul>
+                    <li>Поддержка - Trident, Edge, Blink</li>
+                    <li>За флагом - Gecko</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 
     <section class="slide">
@@ -832,7 +857,8 @@
 
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
-        <h2>Звук</h2>
+        <h2><span>Звук</span></h2>
+        <img src="./pictures/audio_part.JPG" class="cover" />
     </section>
 
     <section class="slide">
@@ -892,11 +918,11 @@
 
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
-        <h2>Сохранение данных, синхронизация</h2>
+        <h2>Сохранение игры</h2>
     </section>
 
     <section class="slide">
-        <h2>Сохранение данных</h2>
+        <h2>Сохранение игры</h2>
         <ul>
             <li>Локальные хранилища (localStorage, indexedDB)</li>
             <li>Сервер (XHR, fetch)</li>
@@ -978,19 +1004,15 @@
         <h2>Будущее</h2>
     </section>
 
-    <section class="slide slide_center_content">
-        <h2>Web animation</h2>
-        <p>TODO</p>
-    </section>
-
-    <section class="slide">
-        <h2>Web VR</h2>
-        <p>TODO</p>
-    </section>
-
-    <section class="slide">
-        <h2>WebRTC</h2>
-        <p>TODO</p>
+   <section class="slide slide_center_content">
+        <h2>Будущие интересные спецификации</h2>
+        <ul>
+            <li>Web VR</li>
+            <li>Web animation</li>
+            <li>WebRTC</li>
+            <li>Payment Request API</li>
+            <li>...</li>
+        </ul>
     </section>
 
     <section class="slide subtitle slide_center">
