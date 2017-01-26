@@ -1,5 +1,5 @@
 
-var AREA = [800, 600];
+var AREA = [600, 500];
 var CIRCLE_SIZE = 50;
 var BASE_SPEED = 100;
 
@@ -18,7 +18,7 @@ class Circle {
         if (!this._elem) {
             this._elem = document.createElement('div');
             this._elem.className = 'circle';
-            document.body.appendChild(this._elem);
+            document.getElementById('container').appendChild(this._elem);
         }
 
         // calculate new position

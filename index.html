@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/shower-material/styles/screen-4x3.css">
+    <link rel="stylesheet" href="node_modules/shower-material/styles/screen-16x10.css">
+    <!-- <link rel="stylesheet" href="node_modules/shower-material/styles/screen-4x3.css"> -->
     <style>
         .slide_center {
             display: flex;
@@ -94,7 +95,7 @@
             display: block;
             margin: 0 auto;
             border: 1px solid black;
-            width: 725px;
+            width: 550px;
         }
     </style>
     <script src="node_modules/shower-core/shower.min.js"></script>
@@ -110,7 +111,7 @@
         <img class="cover ya-logo" src="./pictures/yandex.svg" />
         <style>
             .ya-logo {
-                width: 400px;
+                width: 375px;
             }
             
             .slide-logo::after {
@@ -142,37 +143,34 @@
 
     <section class="slide">
         <h2>Кто я такой?</h2>
-        <p>Меня зовут Сева</p>
-        <p class="next">Разработчик API Яндекс.Карт</p>
-        <p class="next">В прошлом flash-разработчик игр для социальных сетей</p>
-        <p class="next">Игры - мое хобби</p>
+        <ul>
+            <li>Меня зовут Сева</li>
+            <li class="next">Разработчик API Яндекс.Карт</li>
+            <li class="next">В прошлом flash-разработчик игр для социальных сетей</li>
+            <li class="next">Игры - мое хобби</li>
+        </ul>
     </section>
 
     <section class="slide">
         <h2>Почему такая тема?</h2>
-        <p>Внешние браузерные плагины вымирают</p>
-        <p class="next">Браузеры предоставляют всё больше возможностей</p>
+        <ul>
+            <li>Внешние браузерные плагины вымирают</li>
+            <li class="next">Браузеры предоставляют всё больше возможностей</li>
+        </ul>
     </section>
 
     <section class="slide">
-        <h2>Готовые решения</h2>
-        <img src="./pictures/engine.png" class="engine_img" />
-        <a href="http://html5gameengine.com" target="_blank" class="ref-link">html5gameengine.com</a>
-        <style>
-            .engine_img {
-                height: 450px;
-                border: 1px solid black;
-                margin: 0 auto;
-                display: block;
-            }
-        </style>
+        <img src="./pictures/engine.png" class="cover" />
     </section>
 
     <section class="slide">
-        <h2>О чем этот доклад?</h2>
-        <p>Решение задач разработки игр через WEB-спецификации</p>
-        <p class="next">Некоторые удачные практики</p>
-        <p class="next">Почти без 3D</p>
+        <h2>Что будет в этом докладе?</h2>
+        <ul>
+            <li>WEB-спецификации</li>
+            <li class="next">Удачные практики</li>
+            <li class="next">Живые примеры!</li>
+            <li class="next">2D</li>
+        </ul>
     </section>
 
     <!-- Раздел -->
@@ -194,7 +192,7 @@
     </section>
 
     <section class="slide">
-        <h2>requestAnimationFrame</h2>
+        <h2>requestAnimationFrame (RAF)</h2>
         <pre>
             <code>function tick (<mark class="mark">timestamp</mark>) {</code>
             <code class="comment">  /* recalculate */</code>
@@ -211,6 +209,16 @@
     </section>
 
     <section class="slide">
+        <h2>Circle.update</h2>
+        <pre>
+            <code class="comment">// ...</code>
+            <code>this._position[0] += (<mark class="mark">timeDelta</mark> * this._speed) * </code>
+            <code>   this._direction[0];</code>
+            <code class="comment">// ...</code>
+        </pre>
+    </section>
+
+    <section class="slide">
         <h2>tick</h2>
         <pre>
             <code>function tick (timestamp) {</code>
@@ -219,16 +227,6 @@
             <code class="comment">  // ...</code>
             <code>}</code>
             <code>requestAnimationFrame(tick);</code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2>Circle.update</h2>
-        <pre>
-            <code class="comment">// ...</code>
-            <code>this._position[0] += (<mark class="mark">timeDelta</mark> * this._speed) * </code>
-            <code>   this._direction[0];</code>
-            <code class="comment">// ...</code>
         </pre>
     </section>
 
@@ -244,15 +242,7 @@
     <!-- Раздел -->
     <section class="slide subtitle slide_center">
         <h2><span>Графика</span></h2>
-    </section>
-
-    <section class="slide">
-        <h2>Способы отображения игр</h2>
-        <ul>
-            <li>DOM</li>
-            <li>Canvas</li>
-            <li>SVG</li>
-        </ul>
+        <img src="./pictures/gr_part.png" class="cover" />
     </section>
 
     <section class="slide slide_center_content">
@@ -360,50 +350,42 @@
     </section>
 
     <section class="slide slide_center_content">
+        <h2>TODO Отключение сглаживания</h2>
+    </section>
+
+    <section class="slide slide_center_content">
         <h2>Canvas</h2>
         <ul>
             <li>"Честный" интерфейс отображения графики</li>
             <li>Больший контроль над отображением игры</li>
-            <li>3D в браузере</li>
         </ul>
     </section>
 
     <section class="slide">
-        <h2>Активные области на canvas</h2>
+        <h2>Активные области</h2>
         <img src="./pictures/hotspot_back.png" class="hotspot_image hotspot_back" />
         <img src="./pictures/hotspot_front.png" class="hotspot_image hotspot_front" />
         <style>
             .hotspot_image {
                 position: absolute;
-                transform: skewX(-20deg);
             }
             
             .hotspot_front {
-                top: 210px;
-                left: 250px;
+                top: 190px;
+                left: 310px;
+                width: 350px;
             }
             
             .hotspot_back {
-                top: 250px;
-                left: 300px;
+                top: 220px;
+                left: 340px;
+                width: 350px;
             }
         </style>
     </section>
 
     <section class="slide">
-        <h2>Фигуры в API</h2>
-        <img src="./pictures/ymaps_example.png" class="ymaps_example_img" />
-        <a href="https://yandex.ru/maps/213/moscow/?um=constructor%3AsrlnRDI71dHP8lp584DcIIpL88yk4jJs&source=constructorLink&mode=usermaps" target="_blank" class="ref-link">Map</a>
-        <style>
-            .ymaps_example_img {
-                height: 480px;
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
-        <style>
-
-        </style>
+        <img src="./pictures/ymaps_example.png" class="cover" />
     </section>
 
     <section class="slide">
@@ -443,24 +425,34 @@
             .game_example4 {
                 position: absolute;
                 transform: translateX(-50%) skewX(-20deg);
-                width: 525px;
+                width: 400px;
             }
             
             .game_example43 {
-                left: 400px;
+                left: 425px;
                 top: 200px;
             }
             
             .game_example42 {
-                left: 500px;
+                left: 525px;
                 top: 250px;
+                opacity: 0.5;
             }
             
             .game_example41 {
-                left: 600px;
+                left: 625px;
                 top: 300px;
+                opacity: 0.3;
             }
         </style>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>WebGL</h2>
+        <ul>
+            <li>Низкоуровневое API работы с графикой</li>
+            <li>3D в браузере</li>
+        </ul>
     </section>
 
     <section class="slide slide_center_content">
@@ -469,16 +461,8 @@
     </section>
 
     <section class="slide slide_center_content">
-        <h2>WebGL</h2>
-        <img src="./pictures/nasa.png" class="nasa_img" />
-        <a href="http://eyes.nasa.gov/curiosity/" target="_blank" class="ref-link">Пример NASA</a>
-        <style>
-            .nasa_img {
-                width: 670px;
-                margin: 0 auto;
-                display: block;
-            }
-        </style>
+        <img src="./pictures/nasa.png" class="cover" />
+        <a href="http://eyes.nasa.gov/curiosity/" target="_blank" class="ref-link" style="color: white;">Пример NASA</a>
     </section>
 
     <section class="slide slide_center_content">
@@ -513,7 +497,7 @@
             
             .rastr_1 > div {
                 flex-grow: 1;
-                height: 500px;
+                height: 400px;
                 width: 33%;
             }
             
@@ -524,7 +508,7 @@
             }
             
             .rastr1_img {
-                height: 350px;
+                height: 250px;
             }
             
             .rastr2_img {
@@ -533,7 +517,7 @@
             }
             
             .rastr3_img {
-                height: 400px;
+                height: 300px;
             }
         </style>
     </section>
@@ -560,16 +544,13 @@
             
             .rastr_2 > div {
                 flex-grow: 1;
-                height: 500px;
+                height: 400px;
                 width: 33%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
             
-            .rastr_2 > div img {
-                height: 300px;
-            }
         </style>
     </section>
 
@@ -589,8 +570,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
-                height: 425px;
-                margin-top: 75px;
+                height: 400px;
                 position: relative;
             }
             
@@ -610,6 +590,7 @@
                 text-align: center;
                 width: 40%;
                 border-radius: 4px;
+                border: 2px solid black;
             }
         </style>
     </section>
@@ -617,25 +598,16 @@
     <section class="slide slide_center_content">
         <h2>Fullscreen API</h2>
         <ul>
-            <li>Позволяет "развернуть" элемента во весь экран</li>
+            <li>Позволяет "развернуть" элемент во весь экран</li>
             <li class="next">Обладает очень простым интерфейсом</li>
             <li class="next">Не очень широкая поддержка браузерами</li>
             <li class="next">Различия в реализации</li>
             <li class="next">Можно вызвать только по действию пользователя</li>
         </ul>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen" target="_blank" class="ref-link">MDN</a>
     </section>
 
     <section class="slide slide_center">
         <a href="#" target="_blank" class="example">[TODO] fullscreen example</a>
-    </section>
-
-    <section class="slide slide_center_content">
-        <h2>Fullscreen API</h2>
-        <pre>
-            <code>elem.<mark>requestFullScreen</mark>();</code>
-        </pre>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen" target="_blank" class="ref-link">MDN</a>
     </section>
 
     <!-- Раздел -->
@@ -645,18 +617,7 @@
     </section>
 
     <section class="slide">
-        <h2>Способы ввода</h2>
-        <ul>
-            <li>Клавиатура &amp; мышь</li>
-            <li>Сенсорные касания</li>
-            <li>Gamepad API</li>
-            <li>Акселерометр</li>
-            <li>Pointer Lock API</li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Клавиатура &amp; мышь</h2>
+        <h2>TODO Клавиатура &amp; мышь</h2>
         <pre>
             <code>elem.addEventListener(<mark class="mark">'mousemove'</mark>, function(event) {</code>
             <code class="comment">    // do something awesome!</code>
@@ -666,6 +627,19 @@
             <code class="comment">    // ...</code>
             <code>});</code>
         </pre>
+    </section>
+
+    <section class="slide slide_center_content">
+        <h2>Сенсорные касания</h2>
+        <ul>
+            <li>Обработка множественных касаний</li>
+            <li class="next">Реакция на жесты</li>
+            <li class="next">Несколько игроков на одном устройстве</li>
+        </ul>
+    </section>
+
+    <section class="slide slide_center">
+        <a href="./examples/pointer/pointer.html" target="_blank" class="example">Pointer Events example</a>
     </section>
 
     <section class="slide slide_center_content">
@@ -687,105 +661,6 @@
     </section>
 
     <section class="slide">
-        <h2>TouchEvent</h2>
-        <pre>
-            <code>canvas.addEventListener(<mark class="mark">'touchstart'</mark>, function(event) {</code>
-            <code class="comment">    // Список всех прикосновений</code>
-            <code>    event.touches;</code>
-            <code>});</code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2>Pointer Events</h2>
-        <pre>
-            <code>canvas.addEventListener(<mark class="mark">'pointerdown'</mark>, function(event) {</code>
-            <code class="comment">    // Обработка каждого прикосновения отдельно</code>
-            <code>    event.pointerId;</code>
-            <code>});</code>
-        </pre>
-    </section>
-
-    <section class="slide slide_center_content">
-        <h2>TODO Сенсорные касания (иконки браузеров?)</h2>
-        <ul>
-            <li>
-                Touch Events
-                <ul>
-                    <li>Поддержка - Webkit, Blink</li>
-                    <li>За флагом - Gecko, Edge</li>
-                </ul>
-            </li>
-            <li>
-                Pointer Events
-                <ul>
-                    <li>Поддержка - Trident, Edge, Blink</li>
-                    <li>За флагом - Gecko</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Приведение к единому интерфейсу</h2>
-
-        <div class="touch_events events_block">
-            <div>touchstart</div>
-            <div>touchmove</div>
-            <div>...</div>
-        </div>
-        <div class="pointer_events events_block">
-            <div>pointerdown</div>
-            <div>pointermove</div>
-            <div>...</div>
-        </div>
-        <div class="result_events events_block">
-            <div>mousedown</div>
-            <div>mousemove</div>
-            <div>multitouchstart</div>
-            <div>multitouchmove</div>
-            <div>...</div>
-        </div>
-
-        <div class="arrow_right events_arrow"></div>
-        <style>
-            .events_arrow {
-                position: absolute;
-                top: 415px;
-                left: 450px;
-            }
-            
-            .events_block {
-                position: absolute;
-                border: 1px solid black;
-                border-radius: 20px;
-                padding: 5px 20px;
-                width: 200px;
-            }
-            
-            .touch_events {
-                left: 200px;
-                top: 250px;
-            }
-            
-            .pointer_events {
-                left: 200px;
-                bottom: 150px;
-            }
-            
-            .result_events {
-                right: 200px;
-                top: 290px;
-                width: 250px;
-            }
-        </style>
-    </section>
-
-    <section class="slide slide_center">
-        <a href="./examples/pointer/pointer.html" target="_blank" class="example">Pointer Events example</a>
-    </section>
-
-    <section class="slide">
         <h2>Gamepad API</h2>
         <ul>
             <li>Получение состояние геймпадов в браузере</li>
@@ -803,12 +678,10 @@
     <section class="slide">
         <h2>Интерфейс Gamepad API</h2>
         <pre>
-        <code class="comment">// Нет событий нажатий кнопок, движений стиков</code>
-        <code class="comment">// Нужно самому опрашивать в Game loop</code>
-        <code>var gamepad = navigator.getGamepads()[0];</code>
-        <code>var button0 = gp.<mark class="mark">buttons</mark>[0]; <span class="comment">/* 0-16 */</span></code>
-        <code>var axe0 = gp.<mark class="mark">axes</mark>[0]; <span class="comment">/* 0-3 */</span></code>
-    </pre>
+            <code>var gamepad = navigator.getGamepads()[0];</code>
+            <code>var button0 = gp.<mark class="mark">buttons</mark>[0]; <span class="comment">/* 0-16 */</span></code>
+            <code>var axe0 = gp.<mark class="mark">axes</mark>[0]; <span class="comment">/* 0-3 */</span></code>
+        </pre>
     </section>
 
     <section class="slide">
@@ -818,19 +691,10 @@
             <li class="next">Очень похожа на Fullscreen API, но работает с курсором</li>
             <li class="next">Имеет значительно большую поддержку, чем Fullscreen API</li>
         </ul>
-        <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_Lock_API" target="_blank" class="ref-link">MDN</a>
     </section>
 
     <section class="slide slide_center">
-        <a href="#" target="_blank" class="example">[TODO] example</a>
-    </section>
-
-    <section class="slide slide_center_content">
-        <h2>Pointer Lock API</h2>
-        <pre>
-            <code>elem.<mark>requestPointerLock</mark>();</code>
-        </pre>
-        <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_Lock_API" target="_blank" class="ref-link">MDN</a>
+        <a href="#" target="_blank" class="example">[TODO] Pointer Lock example</a>
     </section>
 
     <section class="slide slide_center_content">
@@ -844,16 +708,6 @@
                 <code>});</code>
             </pre>
         </pre>
-        <a href="https://developer.mozilla.org/ru/docs/Web/API/Pointer_Lock_API" target="_blank" class="ref-link">MDN</a>
-    </section>
-
-    <section class="slide">
-        <h2>Device Orientation</h2>
-        <p>TODO описание, код</p>
-    </section>
-
-    <section class="slide slide_center">
-        <a href="#" target="_blank" class="example">[TODO] example?</a>
     </section>
 
     <!-- Раздел -->
@@ -866,7 +720,6 @@
         <h2>Элемент audio</h2>
         <pre>
         <code>var myaudio = new <mark class="mark">Audio</mark>("sound_asset.mp3");</code>
-        <code class="comment">// &#60;audio preload="auto" src="sound_asset.mp3"&#62;&#60;/audio&#62;</code>
         <code>myaudio.play();</code>
     </pre>
     </section>
@@ -891,30 +744,18 @@
         <img src="./pictures/sounds.png" class="game_example" />
     </section>
 
+    <section class="slide slide_center">
+        <a href="./examples/panning/panning.html" target="_blank" class="example">Panning example</a>
+    </section>
+
     <section class="slide">
         <h2>Web Audio API</h2>
         <ul>
             <li>Программный интерфейс для обработки потокового звука</li>
-            <li>Позволяет генерировать звук</li>
-            <li>Имеет поддержку всеми популярными браузерами (кроме IE)</li>
-            <li>Очень большая спецификация</li>
+            <li class="next">Позволяет генерировать звук</li>
+            <li class="next">Имеет поддержку всеми популярными браузерами (кроме IE)</li>
+            <li class="next">Очень большая спецификация</li>
         </ul>
-    </section>
-
-    <section class="slide">
-        <h2>Panning</h2>
-        <pre>
-            <code>var audioCtx = new AudioContext();</code>
-            <code>var source = audioCtx.createMediaElementSource(audio);</code>
-            <code>var panner = audioCtx.<mark>createStereoPanner</mark>();</code>
-            <code>panner.pan.<mark>value</mark> = 0; <span class="comment">// -1 -> 1</span></code>
-            <code>source.connect(panner);</code>
-            <code>panner.connect(audioCtx.destination);</code>
-        </pre>
-    </section>
-
-    <section class="slide slide_center">
-        <a href="#" target="_blank" class="example">[TODO] Panning example</a>
     </section>
 
     <!-- Раздел -->
@@ -932,16 +773,8 @@
     </section>
 
     <section class="slide">
-        <h2>Сетевая игра</h2>
-        <img src="./pictures/slither.io.png" class="slither_io" />
-        <a href="http://slither.io" target="_blank" class="ref-link">slither.io</a>
-        <style>
-            .slither_io {
-                width: 670px;
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
+        <img src="./pictures/slither.io.png" class="cover" />
+        <a href="http://slither.io" target="_blank" class="ref-link" style="color: white; ">slither.io</a>
     </section>
 
     <section class="slide">
@@ -951,13 +784,11 @@
             <li class="next">Двухсторонняя связь</li>
             <li class="next">Множество решений для клиента и для сервера</li>
         </ul>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" class="ref-link">MDN Web Socket</a>
     </section>
 
     <section class="slide">
         <h2>Web Socket</h2>
         <p>TODO немного более подробно про Web Socket</p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" target="_blank" class="ref-link">MDN Web Socket</a>
     </section>
 
     <section class="slide slide_center_content">
@@ -976,8 +807,8 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
-                height: 425px;
-                margin-top: 75px;
+                height: 375px;
+                margin-top: 0px;
                 position: relative;
             }
             
@@ -997,6 +828,7 @@
                 text-align: center;
                 width: 40%;
                 border-radius: 4px;
+                border: 2px solid black;
             }
         </style>
     </section>
