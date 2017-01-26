@@ -1,10 +1,19 @@
+var audioURL;
+
 window.onload = function () {
-    var buttons = document.querySelectorAll('.button');
-    buttons.forEach(function (button) {
-        button.addEventListener('mouseenter', createHandler(
-            Number(button.attributes.getNamedItem('data-value').value)
-        ));
-    });
+
+    document.getElementById('file_select').addEventListener('change', function (event) {
+
+        audioURL = URL.createObjectURL(event.target.files[0]);
+
+        var buttons = document.querySelectorAll('.button');
+        buttons.forEach(function (button) {
+            button.addEventListener('mouseenter', createHandler(
+                Number(button.attributes.getNamedItem('data-value').value)
+            ));
+        });
+
+    })
 };
 
 function createHandler(value) {
@@ -15,7 +24,7 @@ function createHandler(value) {
 }
 
 function createAudio(value) {
-    var audio = new Audio('./sound.wav');
+    var audio = new Audio(audioURL);
     var audioCtx = new AudioContext();
     var source = audioCtx.createMediaElementSource(audio);
     var panner = audioCtx.createStereoPanner();
