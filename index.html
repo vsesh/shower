@@ -7,8 +7,17 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/shower-material/styles/screen-16x10.css">
-    <!-- <link rel="stylesheet" href="node_modules/shower-material/styles/screen-4x3.css"> -->
     <style>
+
+        /* fast fix 16x9 */
+        .shower.full, .slide {
+            width: calc(1024px + 114px);
+        }
+
+        .shower.full {
+            margin-left: calc(-512px + -56px);
+        }
+
         .slide_center {
             display: flex;
             flex-direction: column;
@@ -395,18 +404,18 @@
             }
             
             .game_example43 {
-                left: 475px;
+                left: 525px;
                 top: 200px;
             }
             
             .game_example42 {
-                left: 525px;
+                left: 575px;
                 top: 250px;
                 opacity: 0.5;
             }
             
             .game_example41 {
-                left: 575px;
+                left: 625px;
                 top: 300px;
                 opacity: 0.3;
             }
